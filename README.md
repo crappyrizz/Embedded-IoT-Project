@@ -53,7 +53,7 @@ This prototype consists of one ESP32 microcontroller connected to an MQ-5 gas se
 
 ## Physical Prototype
 
-![Prototype A Physical Circuit](images/physical-prototype-A.jpg)
+![Prototype A Physical Circuit](images/physical-prototype-A.jpeg)
 
 ## Wokwi Simulation
 
@@ -67,7 +67,7 @@ https://wokwi.com/projects/467714861679761409
 
 The complete source code for Prototype A is available in:
 
-`code/prototype A`
+[Prototype A Code](code/prototype-A/)
 
 ## Working Principle
 
@@ -83,6 +83,29 @@ The complete source code for Prototype A is available in:
 The prototype successfully displays temperature, humidity, and gas concentration readings on the LCD while transmitting the same information to the Serial Monitor.
 
 
+
+---
+
+# Prototype B
+
+## Description
+
+Prototype B demonstrates communication between two ESP32 microcontrollers. One ESP32 is connected to an MQ-5 gas sensor while the second ESP32 is connected to a DHT22 temperature and humidity sensor. The two ESP32 boards exchange sensor data, allowing environmental information to be collected and displayed in real time.
+
+## Components Used
+
+| Component | Quantity |
+|-----------|---------:|
+| ESP32 Dev Board | 2 |
+| MQ-5 Gas Sensor | 1 |
+| DHT22 Sensor | 1 |
+| 16×2 LCD Display | 1 |
+| Breadboard | 2 |
+| Jumper Wires | As Required |
+
+## Physical Prototype
+
+![Prototype B Physical Setup](images/physical-prototype-B.png)
 
 ---
 
@@ -112,7 +135,7 @@ https://wokwi.com/projects/468541541280012289
 
 The complete implementation for Prototype C is available in:
 
-`code/prototype-c/`
+[Prototype A Code](code/prototype-C/)
 
 ## Working Principle
 
@@ -131,3 +154,19 @@ The prototype is expected to:
 - Activate or deactivate the relay based on the programmed control logic.
 - Demonstrate successful interaction between the two ESP32 microcontrollers.
 - Display the expected behaviour correctly in the Wokwi simulation.
+
+---
+
+# Evidence of Group Work
+
+The project was completed collaboratively by all group members.
+
+Evidence of group participation is provided below.
+
+![Group Working](images/groupwork/team.jpeg)
+
+---
+
+# Conclusion
+
+The project successfully demonstrated the design and implementation of embedded IoT systems using ESP32 microcontrollers, sensors, and Wokwi simulations. Physical and simulated prototypes were developed to validate sensor integration, communication between devices, and system functionality. The project also provided practical experience in hardware integration, embedded programming, simulation, and troubleshooting.
