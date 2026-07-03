@@ -81,3 +81,53 @@ The complete source code for Prototype A is available in:
 ## Output
 
 The prototype successfully displays temperature, humidity, and gas concentration readings on the LCD while transmitting the same information to the Serial Monitor.
+
+
+
+---
+
+# Prototype C
+## Description
+
+Prototype C demonstrates communication between two ESP32 microcontrollers using a relay-controlled architecture. One ESP32 interfaces with a DHT22 temperature and humidity sensor while the second ESP32 interfaces with an MQ-5 gas sensor. The relay is used as a control mechanism between the two embedded systems to simulate coordinated operation.
+
+## Components Used
+
+| Component | Quantity |
+|-----------|---------:|
+| ESP32 Dev Board | 2 |
+| DHT22 Sensor | 1 |
+| MQ-5 Gas Sensor | 1 |
+| Relay Module | 1 |
+
+## Wokwi Simulation
+
+![Prototype C Wokwi Simulation](images/schematic-wokwi-C.png)
+
+**Simulation Link:**
+
+https://wokwi.com/projects/468541541280012289
+
+## Source Code
+
+The complete implementation for Prototype C is available in:
+
+`code/prototype-c/`
+
+## Working Principle
+
+1. ESP32-1 continuously monitors temperature and humidity using the DHT22 sensor.
+2. The collected sensor data is used to control the relay module.
+3. The relay coordinates the interaction between the two ESP32 microcontrollers.
+4. ESP32-2 monitors gas concentration using the MQ-5 sensor.
+5. Both microcontrollers operate together to demonstrate distributed sensing and control.
+
+## Expected Output
+
+The prototype is expected to:
+
+- Measure temperature and humidity using the DHT22 sensor.
+- Detect gas concentration using the MQ-5 sensor.
+- Activate or deactivate the relay based on the programmed control logic.
+- Demonstrate successful interaction between the two ESP32 microcontrollers.
+- Display the expected behaviour correctly in the Wokwi simulation.
