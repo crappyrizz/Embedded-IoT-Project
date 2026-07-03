@@ -53,7 +53,7 @@ This prototype consists of one ESP32 microcontroller connected to an MQ-5 gas se
 
 ## Physical Prototype
 
-![Prototype A Physical Circuit](images/physical-prototype-A.jpg)
+![Prototype A Physical Circuit](images/physical-prototype-A.jpeg)
 
 ## Wokwi Simulation
 
@@ -67,7 +67,7 @@ https://wokwi.com/projects/467714861679761409
 
 The complete source code for Prototype A is available in:
 
-`code/prototype A`
+[Prototype A Code](code/prototype-A/)
 
 ## Working Principle
 
@@ -83,8 +83,6 @@ The complete source code for Prototype A is available in:
 The prototype successfully displays temperature, humidity, and gas concentration readings on the LCD while transmitting the same information to the Serial Monitor.
 
 
-
----
 
 ---
 
@@ -107,13 +105,9 @@ Prototype B demonstrates communication between two ESP32 microcontrollers. One E
 
 ## Physical Prototype
 
-![Prototype B Physical Setup](images/physical-prototype-B.jpg)
+![Prototype B Physical Setup](images/physical-prototype-B.png)
 
-## Source Code
-
-The complete implementation for Prototype B is available in:
-
-`code/prototype B/`
+---
 
 # Prototype C
 ## Description
@@ -141,7 +135,7 @@ https://wokwi.com/projects/468541541280012289
 
 The complete implementation for Prototype C is available in:
 
-`code/prototype-c/`
+[Prototype A Code](code/prototype-C/)
 
 ## Working Principle
 
@@ -169,7 +163,7 @@ The project was completed collaboratively by all group members.
 
 Evidence of group participation is provided below.
 
-![Group Working](images/groupwork/team.jpg)
+![Group Working](images/groupwork/team.jpeg)
 
 ---
 
