@@ -51,3 +51,33 @@ The prototypes demonstrate sensor integration, communication between ESP32 devic
 
 This prototype consists of one ESP32 microcontroller connected to an MQ-5 gas sensor, a DHT22 temperature and humidity sensor, and a 16×2 LCD display. The system continuously monitors environmental conditions and gas concentration, displaying the readings on the LCD while simultaneously sending the data to the Serial Monitor.
 
+## Physical Prototype
+
+![Prototype A Physical Circuit](images/physical-prototype-A.jpg)
+
+## Wokwi Simulation
+
+![Prototype A Wokwi Simulation](images/schematic-wokwi-A.png)
+
+**Simulation Link:**
+
+https://wokwi.com/projects/467714861679761409
+
+## Source Code
+
+The complete source code for Prototype A is available in:
+
+`code/prototype A`
+
+## Working Principle
+
+1. The ESP32 initializes the DHT22 sensor, MQ-5 gas sensor, and LCD display.
+2. The DHT22 measures temperature and humidity.
+3. The MQ-5 detects gas concentration.
+4. Sensor readings are processed by the ESP32.
+5. The measured values are displayed on the LCD.
+6. The same values are sent to the Serial Monitor for monitoring.
+
+## Output
+
+The prototype successfully displays temperature, humidity, and gas concentration readings on the LCD while transmitting the same information to the Serial Monitor.
