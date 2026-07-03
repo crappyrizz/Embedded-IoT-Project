@@ -2,15 +2,23 @@
 
 ## Semester Project – Deliverable 2
 
-Welcome to our GitHub repository for Deliverable 2 of the Embedded Systems & IoT semester project.
-
-This repository contains:
-
-- Physical prototypes
-- Wokwi simulations
-- ESP32 source code
-- Circuit diagrams
-- Prototype outputs
-- Evidence of group work
+### Embedded Device Prototypes Using ESP32
 
 ---
+
+**Institution:** Strathmore University
+
+**Group:** Group 1: The Resistance
+
+---
+
+## Team Members
+
+- Edgar Kareithi – 164951
+- Mohamed Bile – 152802
+- Evans Mwendwa – 166997
+- Annejoy Warigi – 169915
+- Tim Hubert – 166070
+- Hope Murimi – 150468
+- Martha Muinde – 166319
+
