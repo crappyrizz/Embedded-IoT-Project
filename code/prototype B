@@ -1,0 +1,94 @@
+#include <Wire.h>
+#include <LiquidCrystal_I2C.h>
+
+#define MQ5_PIN 34  // Analog pin connected to MQ-5 Gas Sensor
+
+// Set the LCD address to 0x27 for a 16 chars and 2 line display
+LiquidCrystal_I2C lcd(0x27, 16, 2);
+
+// HardwareSerial 2 configuration
+#define RXD2 16
+#define TXD2 17
+
+// Variables to store received climate data
+float temperature = 0.0;
+float humidity = 0.0;
+bool dataReceived = false;
+
+void setup() {
+  Serial.begin(115200);   // Computer debugging
+  Serial2.begin(9600, SERIAL_8N1, RXD2, TXD2); // Communication from ESP32 #2
+
+  // Initialize LCD
+  lcd.init();
+  lcd.backlight();
+
+  // Replicating the boot screen from image 1000371153.jpg
+  lcd.setCursor(0, 0);
+  lcd.print("The Tinkers Group");
+  lcd.setCursor(0, 1);
+  lcd.print("Warming up...");
+  
+  // MQ sensors require a brief heating/stabilization step on boot up
+  delay(5000); 
+  lcd.clear();
+}
+
+void loop() {
+  // 1. Read local MQ-5 Gas Sensor
+  int gasRawValue = analogRead(MQ5_PIN);
+  
+  // 2. Check for incoming Climate Data from ESP32 #2
+  if (Serial2.available() > 0) {
+    String incomingData = Serial2.readStringUntil('\n');
+    
+    // Parse the comma-separated data ("TEMP,HUMIDITY")
+    int commaIndex = incomingData.indexOf(',');
+    if (commaIndex > 0) {
+      String tStr = incomingData.substring(0, commaIndex);
+      String hStr = incomingData.substring(commaIndex + 1);
+      
+      temperature = tStr.toFloat();
+      humidity = hStr.toFloat();
+      dataReceived = true;
+    }
+  }
+
+  // 3. Output metrics to local Computer Serial Monitor
+  Serial.print("Gas PPM Raw: ");
+  Serial.print(gasRawValue);
+  if (dataReceived) {
+    Serial.print(" | Temp: ");
+    Serial.print(temperature);
+    Serial.print("C | Hum: ");
+    Serial.print(humidity);
+    Serial.println("%");
+  } else {
+    Serial.println(" | Waiting for DHT22 Node data...");
+  }
+
+  // 4. Update the 16x2 LCD Panel
+  lcd.setCursor(0, 0);
+  lcd.print("T:");
+  if(dataReceived) {
+    lcd.print((int)temperature);
+    lcd.print("C ");
+  } else {
+    lcd.print("--C ");
+  }
+  
+  lcd.print("H:");
+  if(dataReceived) {
+    lcd.print((int)humidity);
+    lcd.print("%   ");
+  } else {
+    lcd.print("--%   ");
+  }
+
+  lcd.setCursor(0, 1);
+  lcd.print("Gas Level: ");
+  lcd.print(gasRawValue);
+  lcd.print("   "); // Trailing spaces clear artifact digits
+
+  delay(500); // Balanced screen refresh rate
+}
