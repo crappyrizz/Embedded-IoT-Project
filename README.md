@@ -32,19 +32,6 @@ The prototypes demonstrate sensor integration, communication between ESP32 devic
 
 ---
 
-## Table of Contents
-
-- [Project Overview](#project-overview)
-- [Prototype A](#prototype-a)
-- [Prototype B](#prototype-b)
-- [Prototype C](#prototype-c)
-- [Prototype D](#prototype-d)
-- [Challenges Encountered](#challenges-encountered)
-- [Evidence of Group Work](#evidence-of-group-work)
-- [Repository Structure](#repository-structure)
-- [Conclusion](#conclusion)
-
-  ---
 
 # Prototype A
 ## Description
