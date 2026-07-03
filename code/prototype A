@@ -1,1 +1,55 @@
+#include <Wire.h>
+#include <LiquidCrystal_I2C.h>
+#include <DHT.h>
 
+// --- Configuration ---
+#define DHTPIN 4          // DHT22 Data pin connected to ESP32 Pin 4
+#define DHTTYPE DHT22     // We are using the DHT22 model
+#define MQ5_PIN 34        // Potentiometer (simulating MQ5) connected to Pin 34
+
+// Initialize the DHT sensor and the LCD screen
+DHT dht(DHTPIN, DHTTYPE);
+LiquidCrystal_I2C lcd(0x27, 16, 2); // 0x27 is the standard I2C address
+
+void setup() {
+  // Start the serial monitor for debugging
+  Serial.begin(115200);
+  
+  // Start the sensors and display
+  dht.begin();
+  lcd.init();
+  lcd.backlight(); // Turn on the LCD backlight
+  
+  lcd.setCursor(0, 0);
+  lcd.print("System Starting");
+  delay(2000); // Wait 2 seconds
+}
+
+void loop() {
+  // 1. Read data from sensors
+  float temp = dht.readTemperature(); // Read Temperature in Celsius
+  float humidity = dht.readHumidity(); // Read Humidity
+  int gasLevel = analogRead(MQ5_PIN); // Read the Potentiometer (0 to 4095)
+
+  // 2. Clear the screen for new data
+  lcd.clear();
+
+  // 3. Print Temperature on the top row
+  lcd.setCursor(0, 0); // Column 0, Row 0
+  lcd.print("Temp: ");
+  lcd.print(temp);
+  lcd.print(" C");
+
+  // 4. Print "Gas" level on the bottom row
+  lcd.setCursor(0, 1); // Column 0, Row 1
+  lcd.print("Gas Lvl: ");
+  lcd.print(gasLevel);
+
+  // Print to the computer screen (Serial Monitor) as well
+  Serial.println("--- Reading ---");
+  Serial.print("Temperature: "); Serial.println(temp);
+  Serial.print("Gas Sensor: "); Serial.println(gasLevel);
+
+  // Wait 2 seconds before checking again
+  delay(2000); 
+}
