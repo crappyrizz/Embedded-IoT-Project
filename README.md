@@ -135,7 +135,7 @@ https://wokwi.com/projects/468541541280012289
 
 The complete implementation for Prototype C is available in:
 
-[Prototype A Code](code/prototype-C/)
+[Prototype C Code](code/prototype-C/)
 
 ## Working Principle
 
@@ -163,7 +163,7 @@ The project was completed collaboratively by all group members.
 
 Evidence of group participation is provided below.
 
-![Group Working](images/groupwork/team.jpeg)
+![Group Working](images/team.jpeg)
 
 ---
 
